@@ -172,6 +172,22 @@ body{
     
 }
 
+.floating-img{
+    position: absolute;
+    z-index: -1;
+    
+
+    &.img-student{
+        top: 10%;
+        left: 0;
+    }
+
+    &.img-community{
+        top: 130%;
+        right: 0;
+    }
+}
+
 .sticker{
     --stickerSize:472px;
     --rotation:4deg;
@@ -185,7 +201,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 0;
+    z-index: 1;
     right: var(--stickerMargin);
     bottom: calc(var(--stickerMargin) * -1.75);
 
