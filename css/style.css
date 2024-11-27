@@ -330,6 +330,7 @@ ul.testi{
             display: flex;
             justify-content: center;
             align-items: center;
+            font-weight: 900;
             font-family: 'neue_machina', sans-serif;
             font-size: 1.5rem;
             line-height: 1;
