@@ -80,6 +80,8 @@ h1,h2,h3,h4,h5,h6,p{
     margin-bottom: 1em;
 }
 
+
+
 :root{
     --color-pink:#F9C7E3;
     --color-yellow-gradient:linear-gradient(90deg, #FFED00 0%, rgba(255, 240, 66, 0.40) 100%);;
@@ -129,6 +131,11 @@ body{
     line-height: 1.4;
     letter-spacing:-0.04em;
     
+
+    strong{
+        font-variation-settings: 'wght' 700,  'wdth' 100;
+        font-weight: 700;
+    }
 
     &:before{
         content: '';
@@ -202,13 +209,19 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 1;
-    right: var(--stickerMargin);
-    bottom: calc(var(--stickerMargin) * -1.75);
+    right: calc(var(--stickerMargin) * -5);
+    top: calc(var(--stickerMargin) * -0.5);
 
+    @media screen and (max-width: 930px){
+        --stickerSize:420px;
+        right: calc(var(--stickerMargin) * -3);
+        top: calc(var(--stickerMargin) * -1)
+    }
 
     @media screen and (max-width: 630px){
         --stickerSize:372px;
-        bottom: calc(var(--stickerMargin) * -3.75);
+        right: calc(var(--stickerMargin) * -3);
+        top: calc(var(--stickerMargin) * -2);
     }
     h2{
         text-align: center;
@@ -242,6 +255,25 @@ body{
         }
     }
 }
+
+.btn{
+    display: inline-block;
+    margin: 2rem auto 4em;
+    cursor: pointer;
+    text-decoration: none;
+
+
+    &.cta{
+        border-radius: 25px;
+        background: var(--color-black);
+        color: var(--color-yellow);
+    }
+    
+    &.cta-large{
+        padding: 20px 30px;
+    }
+}
+
 h1{
     font-size: 5.3rem;
     font-size: clamp(2rem, 10vw + 1rem, 5.3rem); 
@@ -252,6 +284,7 @@ h1{
     text-transform: uppercase;
     position: relative;
     z-index: 3;
+    margin-bottom: 0;
 }
 h2{
     font-size: 1.6rem;
@@ -267,17 +300,34 @@ p{
     }
 }
 
+em{
+    color: var(--color-black);
+}
+main{
+    overflow: hidden;
+}
 header{
     max-width: 930px;
     margin: 0 auto 3em auto;
 
-    .titel{
-        position: relative;
-        padding: 7rem 0;
+    
 
-        @media screen and (max-width: 630px){
-            padding: 4rem 0;
+    .titel{
+    
+        position: relative;
+        padding: 10rem 10px 0em;
+       
+
+        h2{
+            position: relative;
+            z-index: 3;
+            text-align: center;
         }
+        
+
+        /* @media screen and (max-width: 630px){
+            padding: 4rem 0;
+        } */
     }
     .cont{
         margin-top:2rem; /* add some more to compensate for the  sticker */
@@ -292,6 +342,10 @@ header{
     margin: 0 auto;
     position: relative;
     z-index: 1;
+
+    &.ticket{
+        margin-top: 3rem;
+    }
 }
 
 ul.testi{

@@ -17,55 +17,57 @@
     <header>
         <div class="titel">
             <h1>The Gathering</h1>
+            <h2><em>Save the Date: Vier 25 Jaar CMD aan de Zuyd Hogeschool op 4 April 2025!</em></h2>
+       
+
             <div class="sticker">
                 <div class="sticker-inner">
                     <h2>25 jaar<br>CMD!</h2>
                     <ul>
-                        <li>Connect</li>
-                        <li>Inspire &</li>
                         <li>Celebrate</li>
+                        <li>Meet &</li>
+                        <li>Discover</li>
                     </ul>
                 </div>
             </div>
         </div>
+    </header>
 
         <div class="cont">
-            <p class="intro">Op 4 april 2025 bestaat CMD (Communicatie & Multimedia Design) 25 jaar, en dat laten we niet ongemerkt voorbijgaan!</p>
-            <p class="intro">We nodigen alumni en professionals uit het werkveld uit om dit bijzondere jubileum met ons te vieren. Dit evenement is dé kans om herinneringen op te halen, te netwerken met vakgenoten en je te laten inspireren door het nieuwste in ons vakgebied.</p>
+            <h2>Waarom jij erbij wilt zijn!</h2>
+            <ul class="testi">
+                <li>
+                    <p><strong>"Terug naar de basis, vooruit naar de toekomst"</strong> - We vieren 25 jaar CMD-Maastricht, kijken vanuit het heden naar de toekomst.</p>
+                </li>
+                <li>
+                    <p><strong>"Verbind en versterk jouw netwerk"</strong> - Ontmoet en maak nieuwe connecties, bouw een nog sterker netwerk, werk samen aan de toekomst van jouw organisatie, van jouw loopbaan en van de opleiding CMD waar ook jij nieuwe kennis kunt opdoen.</p>
+                </li>
+                <li>
+                    <p><strong>"Ontdek de ontwikkelingen waar de ontwerper van de toekomst mee te maken krijgt"</strong> - Leer van de je collega-alumni, de sprekers en in de workshops over de laatste ontwikkelingen en toekomst in het CMD-veld en mogelijk daarbuiten </p>
+                </li>
+            </ul>
 
-            <p>CMD staat aan de vooravond van een nieuw tijdperk, waarin we samen met onze alumni en een werkveldcommissie vorm gaan geven aan de toekomst. Dit jubileum vormt de start van ons nieuwe alumnibeleid, waarin we een blijvende verbinding willen creëren tussen oud-studenten, docenten en het werkveld.</p>
+            <p class="intro">Communication and Multimedia Design bestaat 25 jaar, en dat vieren we groots met The Gathering! Op <strong>4 april 2025</strong> nodigen we alumni uit voor een inspirerende dag vol verbinding, kennisuitwisseling en een feestelijke reünie.</p>
+            <p class="intro">Blik samen terug op 25 jaar creativiteit en innovatie, haal herinneringen op en ontdek de nieuwste ontwikkelingen in het CMD-werkveld. Dit unieke evenement bied je de kans om te netwerken met vakgenoten, nieuwe inzichten op te doen en samen de toekomst van CMD te vorm te geven.</p>
+            <p>Dit jubileum markeert een feestelijke mijlpaal en de start van een nieuw tijdperk. We lanceren op deze dag een structureel alumnibeleid en introduceren een werkveldcommissie om alumni, docenten en het werkveld duurzaam te verbinden.</p>
+        
+            
         </div>
-    </header>
+   
+
+    
     <img src="assets/cmd-alumni-student.png" alt="CMD Alumni Student" class="floating-img img-student">
     <img src="assets/cmd-alumni-community.png" alt="CMD Alumni community" class="floating-img img-community">
 
-    <section class="cont">
+    <section class="cont ticket">
        
-
-        <h2>Waarom jij erbij wilt zijn!</h2>
-        <ul class="testi">
-            <li>
-                <p>Netwerk met oud-klasgenoten en nieuwe connecties in de creatieve industrie.</p>
-            </li>
-            <li>
-                <p>Ontdek de laatste ontwikkelingen en inzichten in design en technologie.</p>
-            </li>
-            <li>
-                <p>Vier het verleden en bouw mee  aan de toekomst van CMD.</p>
-            </li>
-        </ul>
-
         
-        <!-- <h2>Meld je aan en vier samen met ons het 25-jarig bestaan van CMD!</h2> -->
-<!-- 
-        <form action="index.php" method="post">
-            <label for="name">Naam:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <input type="submit" value="Verstuur">
-        </form> -->
+
+        <h2>Een ticket met uitzonderlijke waarde:</h2>
+        <p>Dit evenement biedt een unieke kans om te netwerken en te leren van top-experts, en een inhoudelijk programma van € 450,- aan kenniswaarde. Daarnaast zorgen we ervoor dat je tijdens de dag in de watten wordt gelegd met heerlijke catering, zodat je volop kunt genieten van de dag. En het mooiste? Je bent er al bij voor slechts € 75,- (excl. 21% btw). Een investering die zichzelf terugverdient in nieuwe connecties, inspiratie en inzichten!</p>
+        <p><strong>Jouw aanwezigheid maakt van deze dag een bijzondere gelegenheid! Zet 4 april 2025 alvast in je agenda en vier samen met ons 25 jaar CMD tijdens The Gathering!</strong> Hou onze socials in de gaten, of meld je aan voor de laatste updates.</p>
+
+        <a href="#" class="btn cta cta-large">Houd mij op de hoogte →</a>
 
     </section>
 </main>
@@ -77,11 +79,16 @@ document.addEventListener('scroll', function() {
         const studentImg = document.querySelector('.floating-img.img-student');
         const communityImg = document.querySelector('.floating-img.img-community');
         const h1 = document.querySelector('h1');
+        const sticker = document.querySelector('.sticker');
 
         const parallaxStrength = 0.3;
 
         if (studentImg) {
             studentImg.style.transform = `translateY(${scrollPosition * parallaxStrength}px)`;
+        }
+
+        if (sticker) {
+            sticker.style.transform = `translateY(${scrollPosition * parallaxStrength}px)`;
         }
 
         if (communityImg) {
