@@ -41,15 +41,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* === */
+/* == font-face == */
 @font-face {
     font-family: 'agrandir_variable';
     src: url('../assets/fonts/AgrandirVariable.woff2') format('woff2');
     font-weight: 1 999;
     font-stretch: 75% 100%;
     font-style: normal;
-
 }
 
 @font-face {
@@ -58,14 +56,12 @@ table {
          url('../assets/fonts/neuemachina-black-webfont.woff') format('woff');
     font-weight: 900;
     font-style: normal;
-
 }
 @font-face {
     font-family: 'neue_machina';
     src: url('../assets/fonts/NeueMachina-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
-
 }
 
 *{
@@ -88,11 +84,38 @@ h1,h2,h3,h4,h5,h6,p{
     --color-yellow:#FFF042;
     --color-blue:#009FE3;
     --color-black:#1D1D1D;
-
-
 }
 
+.zuydLogo{
+  
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+    color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
 
+    img{
+        width: 50px;
+        height: auto;
+       
+    }
+
+    span{
+        text-transform:lowercase;
+        font-size: 1rem;
+        line-height: 1.25;
+        
+        font-family: 'neue_machina', sans-serif;
+        font-weight: 900;
+        margin-right: 10px;
+    }
+}
   
   @keyframes gradient-animation {
     0% {
@@ -129,8 +152,7 @@ body{
     font-stretch: 100%;
     
     line-height: 1.4;
-    letter-spacing:-0.04em;
-    
+   
 
     strong{
         font-variation-settings: 'wght' 700,  'wdth' 100;
@@ -190,7 +212,7 @@ body{
     }
 
     &.img-community{
-        top: 130%;
+        top: 45%;
         right: 0;
     }
 }
@@ -256,9 +278,22 @@ body{
     }
 }
 
+@keyframes btnWiggle {
+    0% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+    100% {
+        transform: rotate(-2deg);
+    }
+    
+}
+
 .btn{
     display: inline-block;
-    margin: 2rem auto 4em;
+    margin: 2rem auto 6em;
     cursor: pointer;
     text-decoration: none;
 
@@ -271,6 +306,10 @@ body{
     
     &.cta-large{
         padding: 20px 30px;
+
+        &:hover{
+            animation: btnWiggle 1.4s infinite step-end;
+        }
     }
 }
 
@@ -293,7 +332,7 @@ h2{
     font-weight: 900;
 }
 p{
-   
+    letter-spacing:-0.04em;
     &.intro{
         font-size: 1.3rem;
         margin-bottom: 1.6em;
@@ -304,11 +343,12 @@ em{
     color: var(--color-black);
 }
 main{
+    position: relative;
     overflow: hidden;
 }
 header{
     max-width: 930px;
-    margin: 0 auto 3em auto;
+    margin: 0 auto 7em auto;
 
     
 
