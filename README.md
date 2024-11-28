@@ -14,5 +14,7 @@ Make sure you have the following installed:
 
    ```
    1. npm install
-   2. gulp
+   2. edit in src
+   3. edit css in src/scss
+   4. gulp to compile to root
    ```
