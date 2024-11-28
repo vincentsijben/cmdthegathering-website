@@ -37,7 +37,7 @@ Thumbs.db
 .idea/
 
 # Ignore src folder
-src/
+# src/
 
 # Ignore dist folder (if you want to keep it clean)
 dist/

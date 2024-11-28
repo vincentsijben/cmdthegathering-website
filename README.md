@@ -12,6 +12,7 @@ Make sure you have the following installed:
 ## Getting Started
 
 
-   ```npm install
-   gulp
+   ```
+   1. npm install
+   2. gulp
    ```

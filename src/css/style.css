@@ -1,0 +1,402 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* == font-face == */
+@font-face {
+  font-family: "agrandir_variable";
+  src: url("../assets/fonts/AgrandirVariable.woff2") format("woff2");
+  font-weight: 1 999;
+  font-stretch: 75% 100%;
+  font-style: normal;
+}
+@font-face {
+  font-family: "neue_machina";
+  src: url("../assets/fonts/neuemachina-black-webfont.woff2") format("woff2"), url("../assets/fonts/neuemachina-black-webfont.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "neue_machina";
+  src: url("../assets/fonts/NeueMachina-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 1em;
+}
+
+:root {
+  --color-pink:#F9C7E3;
+  --color-yellow-gradient:linear-gradient(90deg, #FFED00 0%, rgba(255, 240, 66, 0.40) 100%);
+  --color-yellow:#FFF042;
+  --color-blue:#009FE3;
+  --color-black:#1D1D1D;
+}
+
+.zuydLogo {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  text-decoration: none;
+  color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.zuydLogo img {
+  width: 50px;
+  height: auto;
+}
+.zuydLogo span {
+  text-transform: lowercase;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-family: "neue_machina", sans-serif;
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+html {
+  font-size: 24px;
+  background: linear-gradient(283deg, #f39bcc, #f1cfe2);
+  background-size: 120% 120%;
+  animation: gradient-animation 12s ease infinite;
+}
+@media screen and (max-width: 630px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  background: url("../assets/bg-visual-esth.svg") no-repeat center center fixed;
+  background-size: 800px;
+  color: var(--color-black);
+  font-family: "agrandir_variable", sans-serif;
+  font-weight: 500;
+  font-variation-settings: "wght" 500, "wdth" 100;
+  font-stretch: 100%;
+  line-height: 1.4;
+}
+body strong {
+  font-variation-settings: "wght" 700, "wdth" 100;
+  font-weight: 700;
+}
+body:before {
+  content: "";
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  width: 630px;
+  height: 172px;
+  transform: translateX(-50%);
+  background: var(--color-yellow-gradient);
+  mask: url("../assets/cmd-name-graphic.svg") no-repeat;
+  opacity: 0.8;
+}
+body:after {
+  content: "";
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 630px;
+  height: 172px;
+  transform: translateX(50%);
+  background: var(--color-yellow-gradient);
+  mask: url("../assets/cmd-name-graphic.svg") no-repeat;
+  opacity: 0.8;
+}
+
+@keyframes stickerWiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.floating-img {
+  position: absolute;
+  z-index: -1;
+}
+.floating-img.img-student {
+  top: 10%;
+  left: 0;
+}
+.floating-img.img-community {
+  top: 45%;
+  right: 0;
+}
+
+.sticker {
+  --stickerSize:472px;
+  --rotation:4deg;
+  --stickerMargin:30px;
+  animation: stickerWiggle 2s infinite step-end;
+  position: absolute;
+  transform: rotate(var(--rotation));
+  width: var(--stickerSize);
+  height: var(--stickerSize);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  right: calc(var(--stickerMargin) * -5);
+  top: calc(var(--stickerMargin) * -0.5);
+}
+@media screen and (max-width: 930px) {
+  .sticker {
+    --stickerSize:420px;
+    right: calc(var(--stickerMargin) * -3);
+    top: calc(var(--stickerMargin) * -1);
+  }
+}
+@media screen and (max-width: 630px) {
+  .sticker {
+    --stickerSize:372px;
+    right: calc(var(--stickerMargin) * -3);
+    top: calc(var(--stickerMargin) * -2);
+  }
+}
+.sticker h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.sticker:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url(../assets/sticker.svg) no-repeat center center;
+  background-size: contain;
+}
+.sticker ul {
+  color: var(--color-blue);
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 900;
+  font-family: "neue_machina", sans-serif;
+}
+.sticker ul li:before {
+  content: "→";
+  margin-right: 10px;
+}
+
+@keyframes btnWiggle {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+.btn {
+  display: inline-block;
+  margin: 2rem auto 6em;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn.cta {
+  border-radius: 25px;
+  background: var(--color-black);
+  color: var(--color-yellow);
+}
+.btn.cta-large {
+  padding: 20px 30px;
+}
+.btn.cta-large:hover {
+  animation: btnWiggle 1.4s infinite step-end;
+}
+
+h1 {
+  font-size: 5.3rem;
+  font-size: clamp(2rem, 10vw + 1rem, 5.3rem);
+  line-height: 1;
+  text-align: center;
+  font-family: "neue_machina", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  line-height: 1.25;
+  font-family: "neue_machina", sans-serif;
+  font-weight: 900;
+}
+
+p {
+  letter-spacing: -0.04em;
+}
+p.intro {
+  font-size: 1.3rem;
+  margin-bottom: 1.6em;
+}
+
+em {
+  color: var(--color-black);
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+header {
+  max-width: 930px;
+  margin: 0 auto 7em auto;
+}
+header .titel {
+  position: relative;
+  padding: 10rem 10px 0em;
+  /* @media screen and (max-width: 630px){
+      padding: 4rem 0;
+  } */
+}
+header .titel h2 {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+header .cont {
+  margin-top: 2rem; /* add some more to compensate for the  sticker */
+}
+
+.cont {
+  max-width: 800px;
+  padding: 0 15px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.cont.ticket {
+  margin-top: 3rem;
+}
+
+ul.testi {
+  counter-reset: list-counter;
+  --stickerSize:65px;
+  --stickerMargin:30px;
+  --radius:50px;
+  margin-bottom: 4em;
+}
+ul.testi li {
+  counter-increment: list-counter;
+  background: var(--color-yellow);
+  position: relative;
+  min-height: 100px;
+  padding: 15px 0;
+  border-radius: var(--radius);
+  padding-left: calc(var(--stickerMargin) + var(--stickerSize) + var(--stickerMargin));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-right: calc(var(--stickerMargin) * 2);
+}
+ul.testi li p {
+  margin-bottom: 0;
+}
+ul.testi li:before {
+  content: counter(list-counter);
+  position: absolute;
+  width: var(--stickerSize);
+  height: var(--stickerSize);
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--stickerMargin);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-family: "neue_machina", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 0;
+  background: url(../assets/sticker-small.svg) no-repeat center center;
+  background-size: contain;
+  padding-top: 3px;
+  text-align: center;
+}
